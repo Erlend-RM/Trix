@@ -1,25 +1,11 @@
-import java.util.ArrayList;
-
-class Brev {
-    String avsender;
-    String mottaker;
-    ArrayList<String> linjer = new ArrayList<>();
-
-
-    public Brev(String avsender, String mottaker) {
-        this.avsender = avsender;
-        this.mottaker = mottaker;
+public class Brev extends Post {
+    
+    Brev (String beskrivelse, String mottaker) {
+        super(beskrivelse, mottaker);
     }
 
-    public void skrivLinje(String linje) {
-        linjer.add(linje);
-    }
-
-    public void lesBrev(){
-        System.out.println("Hei, " + mottaker + "\n");
-        for (String i : linjer) {
-            System.out.println(i);
-        }
-        System.out.println("\nHilsen fra,\n" + avsender);
+    @Override
+    public String toString() {
+        return "Mottaker: " + mottaker + "\nBrev - beskrivelse: " + beskrivelse;
     }
 }
